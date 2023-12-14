@@ -13,8 +13,6 @@
 # => 111
 
 
-# I want the value of num to be less than my final result. 
-# I need to be able to count the length of the num, and reflect the first values to the back.
 def find_next_palindrome(num)
   string_num = num.to_s
   length = string_num.length
