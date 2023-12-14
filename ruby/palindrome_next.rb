@@ -19,9 +19,9 @@ def find_next_palindrome(num)
   string_num = num.to_s
   length = string_num.length
 
-  if length == 1 || num == 10
-    11
-  elsif length.even?
+  return 11 if length == 1 || num == 10
+  
+  if length.even?
     copy_length = length / 2
     first_half = string_num.slice(0, copy_length)
     second_half = string_num.slice(copy_length..-1)
@@ -33,7 +33,7 @@ def find_next_palindrome(num)
       final = first_half + first_half.reverse
     end
     final.to_i
-  elsif length.odd?
+  else length.odd?
     mid_point = string_num[(length / 2)]
     string_num.delete(mid_point)
     copy_length = length / 2
