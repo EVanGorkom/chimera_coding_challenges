@@ -13,16 +13,16 @@
 def order(words)
   array = words.split
   length = array.length
-  final = []
+  final = ""
   until length == 0
     array.each do |word|
       if word.include?("#{length}")
-        final.unshift(word)
+        final.prepend("#{word} ")
       end
     end
     length -= 1
   end
-  final
+  final.strip
 end
 
 p order("Thi1s is2 3a T4est")
