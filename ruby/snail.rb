@@ -22,9 +22,9 @@ def snail(array)
   temp.each do |index|
     final_array << index
   end
+  # I need a loop in case the array is very large
   
-  require 'pry';binding.pry
   final_array 
 end
 
-snail(array_nums)
+p snail(array_nums)

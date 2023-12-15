@@ -7,13 +7,21 @@
 # "(( @"     =>  "))((" 
 
 def duplicate_encode(word)
-  word.to_a
-  require 'pry';binding.pry
-  if 
-    ")"
-  else
-    "("
+  as_array = word.downcase.split("")
+  final = ""
+  as_array.each do |letter|
+    count_value = as_array.count(letter)
+    if count_value >= 2
+      final << ")"
+    else
+      final << "("
+    end
   end
+
+  return final
 end
 
 p duplicate_encode("Vendetta")
+p duplicate_encode("Hello")
+p duplicate_encode("Nissa")
+p duplicate_encode("Chandra")
