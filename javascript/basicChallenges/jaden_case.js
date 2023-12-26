@@ -11,7 +11,6 @@ function jaden_case(string) {
   let final = "";
   for (i = 0; i < array.length; i++) {
     final += array[i][0].toUpperCase() + array[i].slice(1) + " ";
-
   }
   console.log(final.trim());
 };

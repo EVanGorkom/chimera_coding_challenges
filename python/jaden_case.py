@@ -14,7 +14,6 @@ def to_jaden_case(string):
   for word in array:
     final += word.title()
     final += " "
-
   return final.strip()
 
 print(to_jaden_case("Hey, how is it going?"))
