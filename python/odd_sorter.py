@@ -9,14 +9,17 @@
 import pdb
 
 def sort_array(source_array):
-# i want to determine if the number in the array is odd. Then i need replace it with the lowest odd
   replacement_array = []
+  list_num = 0
   for number in source_array:
-    if ((number % 2) == 1):
+    if ((number % 2) != 0):
+      source_array.remove(number)
+      source_array.insert(list_num)
+      list_num += 1
+      # pdb.set_trace()
       replacement_array.append(number)
-      source_array.append(1)
-    pdb.set_trace()
-  
-  return
+      replacement_array.sort()
+      
+  return replacement_array
 
-sort_array([9, 2, 7, 4, 5, 6, 3, 8, 1]) # expect [1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(sort_array([9, 2, 7, 4, 5, 6, 3, 8, 1])) # expect [1, 2, 3, 4, 5, 6, 7, 8, 9]
