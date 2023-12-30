@@ -3,5 +3,23 @@
 // The input string will only consist of lower case letters and/or spaces.
 
 function getCount(str) {
-  return 0;
+  let count = 0;
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+
+  for (i = 0; i < str.length; i++) {
+    for (v = 0; v < vowels.length; v++) {
+      if (str[i].toLowerCase() == vowels[v]) {
+        count += 1;
+      }
+    }
+  }
+
+  return count;
 }
+
+//// Alternative Solution:
+// function getCount(str) {  
+//   return (str.match(/[aeiou]/ig) || []).length;
+// }
+
+console.log(getCount("This is a long sentence with lots of vowels for counting."))
