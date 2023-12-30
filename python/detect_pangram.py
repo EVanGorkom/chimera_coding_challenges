@@ -4,12 +4,15 @@
 
 def is_pangram(sentence):
   letters = "abcdefghijklmnopqrstuvwxyz"
+  return all(letter in sentence.lower() for letter in letters)
 
-  for letter in letters:
-    if (letter in sentence.lower()):
-      return True
-    else:
-      return False
+## Original Solution:
+# def is_pangram(sentence):
+  # for letter in letters:
+  #   if (letter in sentence.lower()):
+  #     return True
+  #   else:
+  #     return False
 
 
 print(is_pangram("The quick, brown fox jumps over the lazy dog!")) #True
