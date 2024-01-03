@@ -8,5 +8,23 @@
 // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
 
 function alphabetPosition(text) {
-  return text;
+  let final = "";
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let alpha = {};
+  let count = 1;
+
+  for (i = 0; i < alphabet.length; i++) {
+    alpha[alphabet[i]] = count;
+    count += 1;
+  }
+
+  for (j = 0; j < text.length; j++) {
+    if (alpha.hasOwnProperty(text.toLowerCase()[j])) {
+      final += (alpha[text.toLowerCase()[j]].toString() + " ")
+    }
+  }
+
+  return final.trim();
 }
+
+console.log(alphabetPosition("Hello World!"))
