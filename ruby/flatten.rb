@@ -23,7 +23,21 @@
 # But the CustomArray class may not use the built-in .flatten method or .to_s in Ruby or concat or deconstructing in JavaScript
 
 def custom_array(input)
+  final = []
+  temp = [input]
 
+  while temp.length > 0 do
+    current = temp.pop
+
+    current.each do |element|
+      if element.is_a?(Array)
+        temp << element
+      else
+        final << element
+      end
+    end
+  end
+  final
 end
 
 
