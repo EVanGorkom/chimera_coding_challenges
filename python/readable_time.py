@@ -22,21 +22,32 @@ def make_readable(input):
       if minutes > 59:
         minutes = 0
         hours += 1
-
     seconds = input
 
-    if len(str(seconds)) == 1:
-      seconds = '0' + str(seconds)
+    final = f"{hours:02}:{minutes:02}:{seconds:02}"
+    # if len(str(seconds)) == 1:
+    #   seconds = '0' + str(seconds)
+    # if len(str(minutes)) == 1:
+    #   minutes = '0' + str(minutes)
+    # if len(str(hours)) == 1:
+    #   hours = '0' + str(hours)
 
-    if len(str(minutes)) == 1:
-      minutes = '0' + str(minutes)
-
-    if len(str(hours)) == 1:
-      hours = '0' + str(hours)
-
-    final = f"{hours}:{minutes}:{seconds}"
+    # final = f"{hours}:{minutes}:{seconds}"
   return final
 
+
+# Simplified solution
+
+# def make_readable(input):
+#   if input > 356399:
+#     return "99:59:59"
+  
+#   hours = input // 3600
+#   minutes = (input % 3600) // 60
+#   seconds = input % 60
+
+#   formatted = f"{hours:02}:{minutes:02}:{seconds:02}"
+#   return formatted
 
 print(make_readable(0)) # Should return '00:00:00'
 print(make_readable(15)) # Should return '00:00:15'
