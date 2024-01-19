@@ -7,6 +7,18 @@
 # scramble('rkqodlw', 'world') ==> True
 # scramble('cedewaraaossoqqyt', 'codewars') ==> True
 # scramble('katas', 'steak') ==> False
+import pdb
 
 def scramble(string, word):
-   return
+  for letter in (word.lower()):
+    if letter in string:
+      return True
+    else:
+      return False
+    
+print(scramble('rkqodlw', 'world'))
+print(scramble("kats", "stepakp"))
+print(scramble('cedewaraaossoqqyt', 'codewars'))
+
+print(scramble("abcdefgijkmnpqrstuvwxyz", "Hello"))
+# print(scramble("abcdefghijklmnopqrstuvwxyz", "Hello"))
