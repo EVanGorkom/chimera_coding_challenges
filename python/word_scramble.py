@@ -10,15 +10,19 @@
 import pdb
 
 def scramble(string, word):
+  truth_count = 0
   for letter in (word.lower()):
     if letter in string:
-      return True
-    else:
-      return False
-    
-print(scramble('rkqodlw', 'world'))
-print(scramble("kats", "stepakp"))
-print(scramble('cedewaraaossoqqyt', 'codewars'))
+      truth_count += 1
 
-print(scramble("abcdefgijkmnpqrstuvwxyz", "Hello"))
+  if truth_count == len(word):
+    return True
+  else:
+    return False
+    
+print(scramble('rkqodlw', 'world')) #True
+print(scramble("katas", "stepakp")) #False
+print(scramble('cedewaraaossoqqyt', 'codewars')) #True
+
+print(scramble("abcdefgijkmnpqrstuvwxyz", "Hello")) #False
 # print(scramble("abcdefghijklmnopqrstuvwxyz", "Hello"))
