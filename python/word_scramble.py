@@ -10,19 +10,19 @@
 import pdb
 
 def scramble(string, word):
-  truth_count = 0
-  for letter in (word.lower()):
-    if letter in string:
-      truth_count += 1
+  string_letter_counts = {}
+  for char in (string.lower()):
+    string_letter_counts[char] = string_letter_counts.get(char, 0) + 1
 
-  if truth_count == len(word):
-    return True
-  else:
-    return False
-    
+  for letter in (word.lower()):
+    if letter not in string_letter_counts or string_letter_counts[letter] == 0:
+      return False
+    string_letter_counts[letter] -= 1
+
+  return True
+
 print(scramble('rkqodlw', 'world')) #True
 print(scramble("katas", "stepakp")) #False
 print(scramble('cedewaraaossoqqyt', 'codewars')) #True
-
 print(scramble("abcdefgijkmnpqrstuvwxyz", "Hello")) #False
 # print(scramble("abcdefghijklmnopqrstuvwxyz", "Hello"))
