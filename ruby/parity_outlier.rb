@@ -2,5 +2,35 @@
 
 # Examples
 # [2, 4, 0, 100, 4, 11, 2602, 36] -->  11 (the only odd number)
-
 # [160, 3, 1719, 19, 11, 13, -21] --> 160 (the only even number)
+
+def find_outlier(integers)
+  odd_nums = 0
+  even_nums = 0
+
+  # while odd_nums < 2 || even_nums < 2
+  integers.each do |num|
+    if num.odd?
+      odd_nums += 1
+    elsif num.even?
+      even_nums += 1
+    end
+  end
+
+  if odd_nums > even_nums
+    integers.each do |num|
+      if num.even?
+        return num
+      end
+    end
+  else 
+    integers.each do |num|
+      if num.odd?
+        return num
+      end
+    end
+  end
+end
+
+p find_outlier([2, 4, 0, 100, 4, 11, 2602, 36])
+p find_outlier([160, 3, 1719, 19, 11, 13, -21])
