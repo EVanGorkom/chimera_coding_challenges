@@ -4,8 +4,16 @@
 # pig_it('Pig latin is cool') # igPay atinlay siay oolcay
 # pig_it('Hello world !')     # elloHay orldway !
 
-def pig_it(string)
-  array = string.to_a
+def pig_it(input)
+  array = input.split
+  modified_words = array.map do |word|
+    if word =~ /\w/
+      word[1..-1] + word[0] + 'ay'
+    else
+      word
+    end
+  end
+  modified_words.join(' ')
 end
 
 p pig_it("Pig latin is cool")
