@@ -10,13 +10,13 @@ function rot13(message){
     if (charCode >= 65 && charCode <= 90) {
       charCode += 13
       if (charCode > 90) {
-        charCode = (65 + (charCode - 90))
+        charCode = (65 + (charCode - 91))
       };
     }
     else if (charCode >= 97 && charCode <= 122) {
       charCode += 13
       if (charCode > 122) {
-        charCode = (97 + (charCode - 122))
+        charCode = (97 + (charCode - 123))
       };
     };
     final += String.fromCharCode(charCode);
