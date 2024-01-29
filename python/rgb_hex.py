@@ -11,35 +11,29 @@ import pdb
 import math
 
 def rgb(r, g, b):
+  # result = ''
+
   r = max(0, min(r, 255))
   g = max(0, min(g, 255))
   b = max(0, min(b, 255))
 
   hexadecimal = {
-    1: '1',
-    2: '2',
-    3: '3',
-    4: '4',
-    5: '5',
-    6: '6',
-    7: '7',
-    8: '8',
-    9: '9',
-    10: 'A',
-    11: 'B',
-    12: 'C',
-    13: 'D',
-    14: 'E',
-    15: 'F'
+    0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: 'A', 11: 'B',12: 'C', 13: 'D', 14: 'E', 15: 'F'
     }
   
-  # r_hex1 = r / 16
-  r1 = hexadecimal[r / 16]
-  r2 = hexadecimal[math.trunc(r // 16)]
-  pdb.set_trace()
+  r1 = hexadecimal[r // 16]
+  r2 = hexadecimal[r % 16]
 
+  g1 = hexadecimal[g // 16]
+  g2 = hexadecimal[g % 16]
 
-  return result
+  b1 = hexadecimal[b // 16]
+  b2 = hexadecimal[b % 16]
+
+  # result += (r1 + r2 + g1 + g2 + b1 + b2)
+  # return result
+  return (r1 + r2 + g1 + g2 + b1 + b2)
+
 
 print(rgb(255, 255, 255))   # "FFFFFF"
 print(rgb(255, 255, 300))   # "FFFFFF" (300 is rounded to 255)
