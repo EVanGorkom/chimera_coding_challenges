@@ -12,6 +12,24 @@
 // is_prime(2)  /* true  */
 // is_prime(-1) /* false */
 
-function isPrime(num) {
-  //TODO
+function is_prime(num) {
+  if (num <= 1) {
+    return false;
+  }
+
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+
+  return true;
 }
+
+// Examples
+console.log(is_prime(1));  // false
+console.log(is_prime(2));  // true
+console.log(is_prime(-1)); // false
+console.log(is_prime(71)); // true
+console.log(is_prime(23)); // true
+console.log(is_prime(20)); // true
