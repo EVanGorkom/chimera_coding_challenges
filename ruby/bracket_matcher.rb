@@ -32,7 +32,11 @@ def bracket(input)
     '(' => ')',
     '{' => '}',
     '[' => ']',
-    '<' => '>'
+    '<' => '>',
+    ')' => '(',
+    '}' => '{',
+    ']' => '[',
+    '>' => '<'
   }
 
   if input.length.odd?
@@ -43,11 +47,7 @@ def bracket(input)
 
   if input_array.length == 2
     first_half = input_array[0]
-    if opposites[first_half] == input_array[1]
-      return true
-    else
-      return false
-    end # condense this to ternary if time
+    return opposites[first_half] == input_array[1] ? true : false
   else
     first_half = input_array[0..(input_array.length / 2 - 1)]
     second_half = input_array[(input_array.length / 2)..-1].reverse
@@ -69,3 +69,5 @@ p bracket('{([])}') # Should return True
 p bracket('{[]))') # Should return False
 p bracket(')') # Should return False
 p bracket('{[]))]') # Should return False
+
+p bracket('}}{{') # Should return True
