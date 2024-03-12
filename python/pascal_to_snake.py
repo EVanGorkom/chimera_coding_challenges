@@ -7,9 +7,8 @@
 # 1                 -->  "1"
 
 def to_underscore(string):
-    # before every Capital letter AFTER the first one, we add a '_'
-    # we want to convert all uppercase letters to lower case
     final = ''
+    nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     if not isinstance(string, str):
         return f"{string}"
     
@@ -18,7 +17,7 @@ def to_underscore(string):
         if upcase_count == 1:
             upcase_count += 1
             final += char.lower()
-        elif char == char.upper():
+        elif char == char.upper() and char not in nums:
             final += '_' + char.lower()
             upcase_count += 1
         else:
