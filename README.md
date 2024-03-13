@@ -5,6 +5,8 @@
 
 Welcome to my coding challenges repository! Here, you'll find a collection of coding challenges that I have completed in various programming languages. These challenges serve as a demonstration of my problem-solving skills, algorithmic thinking, and proficiency in different programming languages.
 
+---
+
 ## Purpose
 The purpose of this repository is to log my challenges in various coding languages, what I learned, potentially what others have done, and my growth overtime. In these challenges I work with various data structures, algorithms, and logical problems.
 
@@ -13,18 +15,18 @@ The repository is organized into folders based on programming languages. Each fo
 
 
 ```
-|- README.md              # Repository overview and guide
-|- Python/                # Python challenges
-|  |- Challenge1.py       # Sample Python challenge solution
-|  |- Challenge2.py       # Another Python challenge solution
+|- README.md         
+|- Python/           
+|  |- Challenge1.py  
+|  |- Challenge2.py  
 |  |- ...
-|- Ruby/                  # Java challenges
-|  |- Challenge1.rb     # Sample Ruby challenge solution
-|  |- Challenge2.rb     # Another Ruby challenge solution
+|- Ruby/             
+|  |- Challenge1.rb
+|  |- Challenge2.rb
 |  |- ...
-|- JavaScript/            # JavaScript challenges
-|  |- Challenge1.js       # Sample JavaScript challenge solution
-|  |- Challenge2.js       # Another JavaScript challenge solution
+|- JavaScript/       
+|  |- Challenge1.js  
+|  |- Challenge2.js  
 |  |- ...
 |- ...
 ```
