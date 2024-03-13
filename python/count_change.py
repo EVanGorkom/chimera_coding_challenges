@@ -37,7 +37,7 @@ def count_change(money, coins):
 
     for coin in coins:
         for i in range(coin, money + 1):
-            pdb.set_trace()
+            # pdb.set_trace()
             dp[i] += dp[i - coin]
 
     return dp[money]
