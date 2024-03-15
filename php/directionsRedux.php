@@ -40,14 +40,8 @@ if you want to translate, please ask before translating. -->
 
 function dirReduc($arr)
 {
-  $position = [0, 0];
-  $cardinals = [
-    'NORTH' => [0, 1],
-    'SOUTH' => [0, -1],
-    'EAST' => [1, 0],
-    'WEST' => [-1, 0]
-  ];
   $final = [];
+  $position = [0, 0];
 
   // Part 1 will need to determine the final destination
   foreach ($arr as $direction) {
@@ -61,9 +55,6 @@ function dirReduc($arr)
       $position[0] -= 1;
     }
   }
-
-  // return $position[0] . ', ' . $position[1];
-  // make the directions a hash/dic?
 
   // Part 2 will need to find the shortest value to the final position
   while (($position[1] != 0) || ($position[0] != 0)) {
@@ -82,10 +73,33 @@ function dirReduc($arr)
     }
   }
 
-  // var_dump($final);
-  // return $final;
+  // var_dump(array_unique($final));
+  return array_unique($final);
+
 }
+
+//// Alternative solution
+// function dirReduc($arr) {
+//     $opposite = [
+//         'NORTH' => 'SOUTH',
+//         'SOUTH' => 'NORTH',
+//         'WEST'  => 'EAST',
+//         'EAST'  => 'WEST'
+//     ];
+//     $result = [];
+//     foreach ($arr as $value) {
+//         if ($opposite[$value] === end($result)) {
+//             array_pop($result);
+//         } else {
+//             array_push($result, $value);
+//         }
+//     }
+//     return $result;
+// }
 
 echo dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]);
 echo '<br>';
 echo dirReduc(["NORTH", "NORTH", "EAST"]);
+echo '<br>';
+echo dirReduc([]);
+echo '<br>';
