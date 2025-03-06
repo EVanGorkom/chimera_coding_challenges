@@ -19,7 +19,19 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
 """
 
 def majorityElement(nums: list[int]) -> int:
-    return 
+    hash = {}
+    majority_count = 0
+
+    for n in nums:
+        if n in hash:
+            hash[n] += 1
+            if hash[n] > majority_count:
+                majority_count = hash[n]
+                majority_element = n
+        else:
+            hash[n] = 1
+
+    return majority_element
 
 
 nums = [3,2,3]
