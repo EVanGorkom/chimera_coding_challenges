@@ -18,18 +18,33 @@ n == nums.length
 Follow-up: Could you solve the problem in linear time and in O(1) space?
 """
 
-def majorityElement(nums: list[int]) -> int:
-    hash = {}
-    majority_count = 0
 
-    for n in nums:
-        if n in hash:
-            hash[n] += 1
-            if hash[n] > majority_count:
-                majority_count = hash[n]
-                majority_element = n
-        else:
-            hash[n] = 1
+# INITIAL SOLUTION:
+# def majorityElement(nums: list[int]) -> int:
+#     hash = {}
+#     majority_count = 0
+
+#     for n in nums:
+#         if n in hash:
+#             hash[n] += 1
+#             if hash[n] > majority_count:
+#                 majority_count = hash[n]
+#                 majority_element = n
+#         else:
+#             hash[n] = 1
+
+#     return majority_element
+
+
+# BOYER-MOORE ALGORITHM
+def majorityElement(nums: list[int]) -> int:
+    majority_element = None
+    count = 0
+
+    for num in nums:
+        if count == 0:
+            majority_element = num
+        count += 1 if num == majority_element else -1
 
     return majority_element
 
@@ -47,4 +62,5 @@ print(majorityElement(nums))
 # --------------------------
 # WHAT I LEARNED:
 
-# 
+# The Boyer-Moore Algorithm works well for finding a majority element when we are guaranteed a majority element. 
+# My initial solution works well to find a majority element when we are NOT guaranteed a majority element, but the Boyer-Moore Algorithm works best to find the majority element when there is a guaranteed majority and we want to save on space complexity as the challenge requests.
