@@ -24,6 +24,36 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 """
+import pdb
 
 def maxProfit(prices: list[int]) -> int:
-    return
+    # I'll need to see the entire array to know which day to 'buy' on, and then save it's index. Now only iterate through values moving forward from the buy index forward.
+    # I'll need to do a comparison operator to determine if the value of the 'buy' value is less than the 'sell' values. Store the difference if there is one.
+    # Maybe a minimum value function to find the buy value/index and then take a range of the array from that index forward and find the maximum value. Then do a comparison operator. 
+
+    buy_value = min(prices)
+    potential_sell_prices = prices[(prices.index(buy_value) + 1):]
+    sell_value = 0
+    
+    for price in potential_sell_prices:
+        if price < buy_value and price < sell_value:
+            sell_value = price
+
+    if sell_value == 0:
+        return sell_value
+    else:
+        return sell_value - buy_value
+
+
+prices1 = [7,1,5,3,6,4]
+print(maxProfit(prices1))
+# Answer should be 5
+
+prices2 = [7,6,4,3,1]
+print(maxProfit(prices2))
+# Answer should be 0
+
+
+
+# --------------------------
+# WHAT I LEARNED:
