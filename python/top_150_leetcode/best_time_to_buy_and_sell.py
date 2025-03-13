@@ -36,7 +36,7 @@ def maxProfit(prices: list[int]) -> int:
     sell_value = 0
     
     for price in potential_sell_prices:
-        if price < buy_value and price < sell_value:
+        if price > buy_value and price > sell_value:
             sell_value = price
 
     if sell_value == 0:
