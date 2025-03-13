@@ -24,25 +24,45 @@ Constraints:
 1 <= prices.length <= 105
 0 <= prices[i] <= 104
 """
+
 import pdb
 
+# Initial Thoughts:
+# I'll need to see the entire array to know which day to 'buy' on, and then save it's index. Now only iterate through values moving forward from the buy index forward.
+# I'll need to do a comparison operator to determine if the value of the 'buy' value is less than the 'sell' values. Store the difference if there is one.
+# Maybe a minimum value function to find the buy value/index and then take a range of the array from that index forward and find the maximum value. Then do a comparison operator. 
+
+
 def maxProfit(prices: list[int]) -> int:
-    # I'll need to see the entire array to know which day to 'buy' on, and then save it's index. Now only iterate through values moving forward from the buy index forward.
-    # I'll need to do a comparison operator to determine if the value of the 'buy' value is less than the 'sell' values. Store the difference if there is one.
-    # Maybe a minimum value function to find the buy value/index and then take a range of the array from that index forward and find the maximum value. Then do a comparison operator. 
 
-    buy_value = min(prices)
-    potential_sell_prices = prices[(prices.index(buy_value) + 1):]
-    sell_value = 0
+    ## INITIAL SOLUTION:
+    # buy_value = min(prices)
+    # potential_sell_prices = prices[(prices.index(buy_value) + 1):]
+    # sell_value = 0
     
-    for price in potential_sell_prices:
-        if price > buy_value and price > sell_value:
-            sell_value = price
+    # for price in potential_sell_prices:
+    #     if price > buy_value and price > sell_value:
+    #         sell_value = price
 
-    if sell_value == 0:
-        return sell_value
-    else:
-        return sell_value - buy_value
+    # if sell_value == 0:
+    #     return sell_value
+    # else:
+    #     return sell_value - buy_value
+
+
+    ## REFINED SOLUTION:
+    min_price = prices[0]
+    max_profit = 0
+
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        else:
+            profit = price - min_price
+            if profit > max_profit:
+                max_profit = profit
+
+    return max_profit
 
 
 prices1 = [7,1,5,3,6,4]
@@ -57,3 +77,7 @@ print(maxProfit(prices2))
 
 # --------------------------
 # WHAT I LEARNED:
+# My initial instincts were on the right track, but my first solution iterated through the array too many times for a good big O solution. 
+# I knew there was a better way to solve the problem without iterating and recreating the array each time.
+# I referenced my other two-pointer iteration solution problems and was able to come up with an answer that made sense for this use case and saved on both time and memory complexity.
+
