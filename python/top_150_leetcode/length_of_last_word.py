@@ -25,9 +25,15 @@ Constraints:
 s consists of only English letters and spaces ' '.
 There will be at least one word in s.
 """
+import pdb
+
+# I need to wash separate the string based on spaces and return the final word.
+# I may need to wash the string first and remove excess spaces.
 
 def lengthOfLastWord(s: str) -> int:
-    return
+    words = s.strip().split()
+    last_word = words[-1]
+    return len(last_word)
 
 
 s = "Hello World"
