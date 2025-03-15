@@ -52,3 +52,4 @@ print(lengthOfLastWord(s))
 
 # --------------------------
 # WHAT I LEARNED:
+# This challenge was fairly simple in retrospec, but it definitely stumped me for a while since I had forgotten about the .split() method. I was using the .strip() properly to remove the excess spaces, but I was struggling to effectively recreate the .split() method in a meaningful way. I looked at my notes and was able to find the .split() method and afterwards the challenge became trivial.
