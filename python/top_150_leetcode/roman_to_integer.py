@@ -40,21 +40,44 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 """
 
 # First thoughts
+# I'll need to initialize a hash to encode the symbol keys to their corresponding values.
+# I'll need to create a conditional for the placement of values, specifically if an 'I' occurs before another value.
+# Then I need to add the values together based on their placement (ones, tens, hundreds, thousands, etc).
 
 def romanToInt(s: str) -> int:
-    return
+    roman_hash = {
+        "I": 1,
+        "V": 5,
+        "X": 10,
+        "L": 50,
+        "C": 100,
+        "D": 500,
+        "M": 1000
+    }
+
+    previous_value = 0
+    final = 0
+
+    for num in s:
+        current_value = roman_hash[num]
+        if previous_value < current_value:
+            final += current_value - 2 * previous_value
+        else:
+            final += current_value
+        previous_value = current_value
+    return final
 
 
 s = "III"
-romanToInt(s)
+print(romanToInt(s))
 # Answer should be 3
 
 s = "LVIII"
-romanToInt(s)
+print(romanToInt(s))
 # Answer should be 58
 
 s = "MCMXCIV"
-romanToInt(s)
+print(romanToInt(s))
 # Answer should be 1994
 
 
