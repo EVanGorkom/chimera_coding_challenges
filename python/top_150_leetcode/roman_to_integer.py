@@ -83,4 +83,8 @@ print(romanToInt(s))
 
 # --------------------------
 # WHAT I LEARNED:
-
+# In this challenge I was pretty quick to come up with an answer for the basics of the challenge, but the special cases where there was a leading I, X, or C, had me stumped for a long while.
+# I ended up storing the previous value and checking if it was an 'I' and then adjust the final result from there, which worked to an extent.
+# However, I did not read the challenge completely through until about 40 minutes in where I realized the clause that said "largest to smallest" and noticed that "x" and "c" also changed the value of the next num.
+# Once the less than operator was added I had a little difficulty with figuring how best to modify the final result after I had already added the previous number that was less than the current number. 
+# I ended up just multiplying the previous number by 2 and then subtracting it from the current, to get the correct number.
