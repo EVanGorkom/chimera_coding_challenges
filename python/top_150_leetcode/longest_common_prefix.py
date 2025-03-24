@@ -19,22 +19,17 @@ strs[i] consists of only lowercase English letters if it is non-empty.
 """
 
 # Initial thoughts:
-# I'll want to approach this similar to how I did the majority element challenge. (starting with a base value and )
+# I'll want to approach this similar to how I did the majority element challenge. (starting with a base value and then comparing it across the rest of the array)
 
 def longestCommonPrefix(strs: list[str]) -> str:
     if not strs:
         return ""
 
-    # Start with the first word as the initial prefix
     longest_prefix = strs[0]
 
-    # Iterate over the remaining words
     for word in strs[1:]:
-        # While the current word does not start with the current prefix,
-        # remove the last character from the prefix
         while not word.startswith(longest_prefix):
             longest_prefix = longest_prefix[:-1]
-            # If the prefix becomes empty, no common prefix exists
             if not longest_prefix:
                 return ""
 
@@ -52,3 +47,5 @@ print(longestCommonPrefix(strs))
 
 # --------------------------
 # WHAT I LEARNED:
+# I was stumped on how to approach this one for a while after getting into it. As with all of these top 150 challenges, they appear straightforward at first, but are always more challenging than they let on.
+# I originally did not want to use the 'while' loop cause I was afraid of compromising my big O time complexity, but ended up deciding that I needed it to progress.
