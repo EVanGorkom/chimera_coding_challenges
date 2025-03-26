@@ -34,10 +34,24 @@ word1 and word2 consist of lowercase English letters.
 """
 
 # Initial thoughts
+# The trick here is going to be "how do I iterate through both strings at the same time?".
+# I need to be able to alternate between two strings and add the element from each string for each index one at a time.
 
 
 def mergeAlternately(word1: str, word2: str) -> str:
-    return
+    final = ""
+    i = 0
+    j = 0
+
+    while i < len(word1) or j < len(word2):
+        if i < len(word1):
+            final += word1[i]
+            i += 1
+        if j < len(word2):
+            final += word2[j]
+            j += 1
+
+    return final
 
 
 word1 = "abc"
@@ -57,3 +71,6 @@ print(mergeAlternately(word1, word2))
 
 
 # WHAT I LEARNED:
+# I was able to deduce that I would need to track how long the strings were while iterating through each string simultaneously.
+# Initially I tried creating only one counting value "i", but after doing a lot of troubleshooting and working around, I ultimately decided that I needed two counting values.
+# The problem was fairly straightforward after that and I only needed to do some clean up work to make the code more refined.
