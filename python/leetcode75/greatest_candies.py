@@ -31,16 +31,43 @@ n == candies.length
 """
 
 # Initial thoughts
+# This challenge will require me to check the values of each kid's candy count before and after the extra candies are added.
+# I think I'll start with taking the maximum value of the array and then loop through once to see if the extra candies added for each value are greater than or equal to the maximum base value.
+#   If yes, then I can add `True` to the solution array, else add `False`
 
+import pdb
 
 def kidsWithCandies(candies: list[int], extraCandies: int) -> list[bool]:
-    return
+    greatest_candies = max(candies)
+    bool_array = []
+    
+    for kid in candies:
+        if kid + extraCandies >= greatest_candies:
+            bool_array.append(True)
+        else:
+            bool_array.append(False)
 
+    return bool_array
+
+
+candies = [2,3,5,1,3] 
+extraCandies = 3
+print(kidsWithCandies(candies, extraCandies))
+# Answer should be: [true,true,true,false,true] 
 
 candies = [4,2,1,1,2] 
 extraCandies = 1
 print(kidsWithCandies(candies, extraCandies))
 # Answer should be: [true,false,false,false,false] 
 
+candies = [12,1,12] 
+extraCandies = 10
+print(kidsWithCandies(candies, extraCandies))
+# Answer should be: [true,false,true]
+
+
 # --------------------------
 # WHAT I LEARNED:
+# I don't think I really learned anything on this one that was too out of the ordinary. 
+# I tackled this step by step and made sure to read the prompt very carefully to fully understand the requirements of the code.
+# Then I utilized the built-in methods and compared values.
