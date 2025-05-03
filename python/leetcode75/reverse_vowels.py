@@ -19,7 +19,9 @@ s consist of printable ASCII characters.
 """
 
 # Initial Thoughts
-# 
+# I wonder if there's a way to iterate through a string backwards? I think it would be beneficial to move through the string both backwards and forwards, and assign and reassign values as we move through either end.
+# For this strategy I would need to know the midpoint of the string. If it's a vowel, I leave it alone, else continue switching the vowels.
+# Additionally, I'll need to define the vowels array of strings before hand. I'll need to account for uppercase or lowercase characters.
 
 
 def reverseVowels(s: str) -> str:
