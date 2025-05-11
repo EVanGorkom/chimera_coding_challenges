@@ -6,6 +6,11 @@
 # You can assume, for the purpose of this kata, that the supplied array will not be empty.
 
 def find_smallest_int(arr)
-  return
+  arr.min()
 end
 
+array = [34, 15, 88, 2]
+puts(find_smallest_int(array))
+
+array = [34, -345, -1, 100]
+puts(find_smallest_int(array))
