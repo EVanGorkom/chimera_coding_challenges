@@ -26,22 +26,40 @@ s consist of printable ASCII characters.
 
 
 def reverseVowels(s: str) -> str:
+    # BASIC SOLUTION USING FOR LOOPS:
+    # vowels = "aeiouAEIOU"
+    # vowel_array = []
+    # new_s = ""
+
+    # for letter in s:
+    #     if letter in vowels:
+    #         vowel_array.append(letter)
+
+    # for letter in s:
+    #     if letter in vowels:
+    #         new_s += vowel_array[-1]
+    #         vowel_array.pop()
+    #     else:
+    #         new_s += letter
+
+    # return new_s
+
+    # NEW SOLUTION UTILIZING TWO-POINTER:
     vowels = "aeiouAEIOU"
-    vowel_array = []
-    new_s = ""
+    s = list(s)
+    left, right = 0, len(s) -1
 
-    for letter in s:
-        if letter in vowels:
-            vowel_array.append(letter)
-
-    for letter in s:
-        if letter in vowels:
-            new_s += vowel_array[-1]
-            vowel_array.pop()
+    while left < right:
+        if s[left] not in vowels:
+            left += 1
+        elif s[right] not in vowels:
+            right -= 1
         else:
-            new_s += letter
-
-    return new_s
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+    
+    return ''.join(s)
 
 
 s = "IceCreAm"
@@ -55,3 +73,5 @@ print(reverseVowels(s))
 
 # --------------------------
 # WHAT I LEARNED:
+# There are so many applications of the two pointer method, and in this case in particular I knew there was a more streamlined answer and that it likely involved a two-pointer method, but I was struggling with it's implementation. 
+# I ended up going to stack overflow to learn more about two-pointer methods and their various applications and ended up coming up with this solution.
