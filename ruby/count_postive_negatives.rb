@@ -9,7 +9,29 @@
 
 
 def count_positives_sum_negatives(lst)
-  #your code here
+  positive_count = 0
+  negative_sum = 0
+
+  if lst == [] || lst == nil
+    return []
+  end
+
+  lst.each do |num|
+    if num > 0
+      positive_count += 1
+    elsif num < 0
+      negative_sum += num
+    end
+  end
+
+  return [positive_count, negative_sum]
+
+  ## Alternative solution:
+  # return [] if lst.empty?
+
+  # positives, negatives = lst.partition(&:positive?)
+
+  # [positives.count, negatives.sum]
 end
 
 # Example
