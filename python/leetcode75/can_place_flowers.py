@@ -23,18 +23,16 @@ There are no two adjacent flowers in flowerbed.
 
 
 def canPlaceFlowers(flowerbed: list[int], n: int) -> bool:
-    for i in range(len(flowerbed)):
-        if (flowerbed[i] == 0 
-            and (i == 0 or flowerbed[i - 1] == 0) 
-            and (i == len(flowerbed) - 1 or flowerbed[i + 1] == 0)):
-            
+    flowerbed_size = len(flowerbed)
+    for i in range(flowerbed_size):
+        if n <= 0:
+            break
+        prev = i == 0 or flowerbed[i - 1] == 0
+        fut = i == flowerbed_size - 1 or flowerbed[i + 1] == 0
+        if prev and fut and flowerbed[i] == 0:
             flowerbed[i] = 1
             n -= 1
-            
-            if n == 0:
-                return True
-
-    return n == 0
+    return n <= 0
 
 
 flowerbed = [1,0,0,0,1] 
@@ -50,4 +48,4 @@ print(canPlaceFlowers(flowerbed, n))
 
 # --------------------------
 # WHAT I LEARNED:
-
+# I learned that I need to study basic/advanced algorithmic patterns more. 
