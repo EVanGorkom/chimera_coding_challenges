@@ -31,23 +31,15 @@ Follow-up: If the string data type is mutable in your language, can you solve it
 
 
 
-def reverseWords(self, s: str) -> str:
-    words_array = []
-    array_index = 0
-
-    for letter in s:
-        if letter != " ":
-            words_array[array_index] += letter
-        else:
-            array_index += 1
-
-    print words_array
+def reverseWords(s: str) -> str:
+    array = s.strip().split()
+    return " ".join(reversed(array))
 
 
 
 s = "the sky is blue"
 print(reverseWords(s))
-# Answer should be "blue is the sky"
+# Answer should be "blue is sky the"
 
 s = "  hello world  "
 print(reverseWords(s))
