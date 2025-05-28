@@ -32,7 +32,16 @@ Follow-up: If the string data type is mutable in your language, can you solve it
 
 
 def reverseWords(self, s: str) -> str:
-    return
+    words_array = []
+    array_index = 0
+
+    for letter in s:
+        if letter != " ":
+            words_array[array_index] += letter
+        else:
+            array_index += 1
+
+    print words_array
 
 
 
