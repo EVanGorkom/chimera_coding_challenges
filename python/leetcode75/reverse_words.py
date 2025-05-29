@@ -52,4 +52,5 @@ print(reverseWords(s))
 
 # --------------------------
 # WHAT I LEARNED:
-
+# For this challenge I was at first, trying to solve the problem without the use of built-in functions. First I utilized .split(), and then .strip(), and then reversed(). 
+# Later I remembered that I could utilize the .join(" ") syntax to join elements of an array together. Afterwards, it was just a matter of stringing all of the builtin methods together in a way that makes sense.
