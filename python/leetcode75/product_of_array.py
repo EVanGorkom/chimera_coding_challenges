@@ -20,11 +20,14 @@ Follow up: Can you solve the problem in O(1) extra space complexity? (The output
 """
 
 # Initial Thoughts:
-
+# I'll need to make sure that I'm only iterating through the array once, but we still need to see all the values of the array at each index of the array.
 
 
 def productExceptSelf(nums: list[int]) -> list[int]:
-    return
+    result = []
+    
+    for num in nums:
+        
 
 
 nums = [1,2,3,4]
