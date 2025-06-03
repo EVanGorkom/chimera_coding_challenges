@@ -17,10 +17,22 @@
 
 
 # Initial Thoughts:
+# I feel like I should just be able to pop and append the zeroes from the array to the end. 
+# The trick will be determining when to stop. 
 
 
 def moveZeroes(nums: list[int]) -> None:
-    return
+    insert_pos = 0
+
+    for num in nums:
+        if num != 0:
+            nums[insert_pos] = num
+            insert_pos += 1
+
+    while insert_pos < len(nums):
+        nums[insert_pos] = 0
+        insert_pos += 1
+
 
 
 nums = [0,1,0,3,12]
