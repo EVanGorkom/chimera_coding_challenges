@@ -47,4 +47,6 @@ print(isSubsequence(s, t))
 
 
 # WHAT I LEARNED:
-
+# I feel like this was a really good challenge to learn the classic basics of two-pointer method and I feel like my first method, while accurate could have used some improvements.
+# I ended switching to a 'while' loop instead of a for loop since I wasn't really using the 'i' variable anyways. I also streamlined the final return into single comparison operator since it was returning True or False anyways.
+# All in all a good challenge and I feel like I learned a lot.
