@@ -19,22 +19,21 @@ Follow up: Suppose there are lots of incoming s, say s1, s2, ..., sk where k >= 
 """
 
 # Initial Thoughts:
-# Off the bat, this one is going to be tricky. The trick here will be that I need to comb through the strings to find if the 
+# Off the bat, this one is going to be tricky. The trick here will be that I need to comb through both the strings but limit the for loop to only one pass.
+# The initial solution works, but it needs to be refined and fails on certain edge cases.
 
 
 def isSubsequence(s: str, t: str) -> bool:
     s_point = 0
     t_point = 0
 
-    for i in range(t_point, len(t)):
+    while s_point < len(s) and t_point < len(t):
         if s[s_point] == t[t_point]:
             s_point += 1
         t_point += 1
+    
+    return s_point == len(s)
 
-    if s_point == len(s):
-        return True
-    else:
-        return False
 
 s = "abc" 
 t = "ahbgdc"
