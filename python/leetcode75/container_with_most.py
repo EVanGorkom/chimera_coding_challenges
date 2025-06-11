@@ -53,4 +53,6 @@ print(maxArea(height))
 
 
 # WHAT I LEARNED:
-
+# This one was pretty tricky, but I ended up getting the hang of it.
+# It was a really good example of the two-pointer method and I was able to use some creative thinking to arrive at a functional answer.
+# I like that the logic I wrote is easy to comprehend and straightforward.
