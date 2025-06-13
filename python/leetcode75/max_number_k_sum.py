@@ -25,11 +25,13 @@ Constraints:
 """
 
 # Initial Thoughts:
+# The trick for this one will be removing the sum ends from the array. 
+# Additionally, moving through the array from either end will be the easy part, 
+# but moving through the array while removing elements, will be challenging.
 
 
 def maxOperations(nums: list[int], k: int) -> int:
     return
-
 
 nums = [1,2,3,4] 
 k = 5
