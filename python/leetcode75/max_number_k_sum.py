@@ -31,7 +31,25 @@ Constraints:
 
 
 def maxOperations(nums: list[int], k: int) -> int:
-    return
+    nums.sort()
+    left = 0
+    right = len(nums) - 1
+    sum_count = 0
+
+    while left < right:
+        sum = nums[left] + nums[right]
+
+        if sum == k:
+            sum_count += 1
+            left += 1
+            right -= 1
+        elif sum < k:
+            left += 1
+        else:
+            right -= 1
+
+    return sum_count
+
 
 nums = [1,2,3,4] 
 k = 5
