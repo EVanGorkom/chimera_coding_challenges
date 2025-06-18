@@ -19,6 +19,8 @@ n == nums.length
 """
 
 # Initial Thoughts:
+# This challenge is pretty similar to ones I've done in the past, but the trick will be to create a sliding window that I will be able to check the values for as I move through the array by the k amount.
+# I'll need to be careful not to go over the array length with the window as well and create an "avg" value that dynamically updates while moving though the array.
 
 
 def findMaxAverage(nums: list[int], k: int) -> float:
