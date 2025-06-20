@@ -24,8 +24,17 @@ n == nums.length
 
 
 def findMaxAverage(nums: list[int], k: int) -> float:
-    return
+    window_sum = sum(nums[0:k])
+    max_avg = 0
 
+    for i in range(k, len(nums)):
+        window_sum = window_sum - nums[i - k]
+        window_sum = window_sum + nums[i]
+
+        if window_sum > max_sum:
+            max_sum = window_sum
+    
+    return max_avg / k
 
 nums = [1,12,-5,-6,50,3] 
 k = 4
