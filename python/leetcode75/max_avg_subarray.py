@@ -1,6 +1,5 @@
 """
 You are given an integer array nums consisting of n elements, and an integer k.
-
 Find a contiguous subarray whose length is equal to k that has the maximum average value and return this value. Any answer with a calculation error less than 10-5 will be accepted.
 
 Example 1:
@@ -36,6 +35,7 @@ def findMaxAverage(nums: list[int], k: int) -> float:
     
     return max_avg / k
 
+
 nums = [1,12,-5,-6,50,3] 
 k = 4
 print(findMaxAverage(nums, k))
@@ -48,4 +48,5 @@ print(findMaxAverage(nums, k))
 
 
 # WHAT I LEARNED:
-
+# As this is one of the first times going through a sliding window challenge, I ended up going through several tutorial videos to get a better sense of how sliding window challenges work.
+# I'm looking forward to trying a new sliding window challenge to continue mastering this strategy.
