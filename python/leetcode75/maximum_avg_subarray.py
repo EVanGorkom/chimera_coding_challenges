@@ -19,14 +19,21 @@ n == nums.length
 
 
 # Initial Thoughts:
+# For this challenge I'm definitely going to need to use the static window version of a Sliding window. I think the challenge here is going to be handling the trailing zeros. I'm not sure why they are being included here.
+
+def findMaxAverage(nums: int, k: int) -> float:
+    return
 
 
+nums = [1,12,-5,-6,50,3]
+k = 4
+print(findMaxAverage(nums, k))
+# Answer should be: 12.75000
 
 
-
-# Answer should be: 2
-
-
-# Answer should be: 1
+nums = [5]
+k = 1
+print(findMaxAverage(nums, k))
+# Answer should be: 5.00000
 
 # WHAT I LEARNED:
